@@ -24,6 +24,7 @@ class AnimatedSVGPath extends Component {
     transform: PropTypes.string,
     reverse: PropTypes.bool,
     rewind: PropTypes.bool,
+    children: PropTypes.element
   };
 
   static defaultProps = {
@@ -106,6 +107,7 @@ class AnimatedSVGPath extends Component {
       strokeLinecap,
       strokeDashArray: dashArray,
       transform,
+      children
     } = this.props;
     return (
       <Svg height={height * scale + 5} width={width * scale + 5}>
@@ -120,6 +122,7 @@ class AnimatedSVGPath extends Component {
           transform={transform}
           d={d}
         />
+        {children}
       </Svg>
     );
   }
